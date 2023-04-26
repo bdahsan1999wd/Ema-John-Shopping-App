@@ -11,11 +11,43 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
 
 
+    // -------------------------No 1-------------------------
+
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
+
+    // -------------------------No 2-------------------------
+
+    // useEffect(() => {
+    //     const fetchProducts = async () => {
+    //         const res = await fetch('products.json');
+    //         const data = await res.json();
+    //         setProducts(data);
+    //     };
+
+    //     fetchProducts().catch(console.error);
+    // }, []);
+
+    // -------------------------No 3-------------------------
+
+    // useEffect(() => {
+    //     const fetchProducts = async () => {
+    //         try {
+    //             const res = await fetch('products.json');
+    //             const data = await res.json();
+    //             setProducts(data);
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //     };
+
+    //     fetchProducts();
+    // }, []);
+
+    
 
     useEffect(() => {
 
