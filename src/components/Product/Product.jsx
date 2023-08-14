@@ -6,7 +6,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Product = (props) => {
 
-    const { category, img, name, price, quantity, ratings, ratingsCount, seller, shipping, stock } = props.product;
+    const { img, name, price, ratings, seller } = props.product;
 
     const handleAddToCart = props.handleAddToCart;
 
@@ -19,7 +19,7 @@ const Product = (props) => {
                 <h6 className='product-name'>{name}</h6>
                 <p>Price: ${price}</p>
                 <p>Manufacturer: {seller}</p>
-                <p>Rating: {ratings} Star</p>
+                <p>Rating: {ratings} Stars</p>
             </div>
 
             <button onClick={() => handleAddToCart(props.product)} className='btn-cart'>
@@ -30,6 +30,5 @@ const Product = (props) => {
         </div>
     );
 };
-import './Product.css';
 
 export default Product;

@@ -47,12 +47,10 @@ const Shop = () => {
     //     fetchProducts();
     // }, []);
 
-    
+
 
     useEffect(() => {
-
         const storedCart = getShoppingCart();
-
         const savedCart = [];
 
         // step 1: get id of the storedProduct
@@ -67,20 +65,25 @@ const Shop = () => {
                 savedCart.push(addedProduct);
             }
             // console.log('added Product...', addedProduct);
-
         }
         // step 5: set the cart
         setCart(savedCart);
 
     }, [products]);
 
+
+
+    // ----------------------------------------------------------
     const handleAddToCart = (product) => {
         // console.log(product);
         const newCart = [...cart, product];
         setCart(newCart);
-
+        // Store to Local Storage
         addToDb(product.id)
     }
+    // ----------------------------------------------------------
+
+
 
     return (
         <div className='shop-container'>
@@ -94,6 +97,7 @@ const Shop = () => {
                     ></Product>)
                 }
             </div>
+
             <div className='cart-container'>
                 <Cart cart={cart}></Cart>
             </div>
